@@ -1,0 +1,32 @@
+<?php include ("cabecera.html"); ?>
+<?php include("sesion.php"); ?>
+
+<?php
+include("db_connect.php");
+
+//Lanzamos la consulta
+$sql = "SELECT id, firstname, lastname, phone, user_code FROM MyGuests ORDER BY lastname";
+$result = mysqli_query($conn, $sql);
+
+if ($result==false) {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+elseif (mysqli_num_rows($result) > 0) {
+
+  // Convertir todo a un array asociativo
+  $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+  // Recorrer con foreach
+  foreach ($rows as $row) {
+    echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . " - Phone: " . $row["phone"] . " - User Code: " . $row["user_code"] . "<br>";
+  }
+
+} else {
+  echo "0 results";
+}
+
+// Close connection
+mysqli_close($conn);
+?>
+
+<?php include("./footer.html"); ?>
