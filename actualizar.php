@@ -1,8 +1,7 @@
-<?php include ("cabecera.html"); ?>
 <?php include("sesion.php"); ?>
 
 <?php
-include("db_connect.php");
+include("config.php");
 ?>
 
 <h1>Actualizar Apellido de Usuario</h1>

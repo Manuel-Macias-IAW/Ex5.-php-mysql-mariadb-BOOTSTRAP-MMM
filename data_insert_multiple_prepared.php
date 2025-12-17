@@ -1,8 +1,7 @@
-<?php include ("cabecera.html"); ?>
 <?php include("sesion.php"); ?>
 
 <?php
-include("db_connect.php");
+include("config.php");
 
 // Prepare statement
 $stmt = mysqli_prepare($conn, "INSERT INTO MyGuests (firstname, lastname, email, phone, user_code) VALUES (?, ?, ?, ?, ?)");

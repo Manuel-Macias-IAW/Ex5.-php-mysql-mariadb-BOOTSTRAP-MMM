@@ -1,14 +1,16 @@
 <?php include("sesion.php"); ?>
+<?php include ("cabecera.html"); ?>
+
 
 <?php
 $servername = "localhost";
 $username = "mmm";
 $password = "1234";
-$dbname = "bd_w3_mmm2";
+
 
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password);
 
 // Check connection
 if (!$conn) {
